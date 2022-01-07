@@ -1,41 +1,8 @@
-from PyQt5.QtCore import * 
-from PyQt5.QtGui import * 
-from PyQt5.QtWidgets import * 
-import sys
-  
-  
-class Window(QMainWindow):
-  
-  
-    def __init__(self):
-        super().__init__()
-  
-  
-        # set the title
-        self.setWindowTitle("Python")
-  
-        self.setWindowOpacity(0.5)
-  
-  
-        # setting  the geometry of window
-        self.setGeometry(60, 60, 600, 400)
-  
-        # creating a label widget
-        self.label_1 = QLabel("transparent ", self)
-        # moving position
-        self.label_1.move(100, 100)
-  
-        self.label_1.adjustSize()
-  
-        # show all the widgets
-        self.show()
-  
-  
-# create pyqt5 app
-App = QApplication(sys.argv)
-  
-# create the instance of our Window
-window = Window()
-  
-# start the app
-sys.exit(App.exec())
+import datetime
+
+time_now = datetime.datetime.now()
+time_goal = datetime.datetime(year=2022, month=12, day=31, hour=23, minute=59)
+print(time_now)
+print(time_goal)
+td = time_goal - time_now
+print(td.total_seconds())
